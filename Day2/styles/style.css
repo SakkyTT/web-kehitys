@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Dokdo&display=swap');
+
+html{
+    font-family: 'Dokdo', cursive;
+}
+
+body{
+    background-color: aqua;
+}
+
+a,
+h1{
+    background-color:crimson;
+    text-align: center;
+    letter-spacing: 3px;
+    padding: 10px 0px 10px 50px;
+    margin-right: 10px;
+    border: 5px solid black;
+    text-shadow: 30px 30px 10px black;
+}
+
+#black-link{
+    color: black;
+}
+
+a:hover{
+    font-size: 50px;
+}
+
+img:hover{
+    width: 200px;
+    height: 150px;
+}

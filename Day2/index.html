@@ -1,0 +1,51 @@
+<!-- perus html runko: 1. kirjoita "doc" ja 2. paina sarkainta -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        /* CSS-kommentti
+        Voi olla monta riviä.
+        Täällä voi määritellä tyylejä tämän tiedoston
+        elementeille.
+        */
+        img { 
+            /*Määrittää tyylit kaikille img-elementeille*/
+            width: 1000px;
+            height: 750px;
+            display: block;
+            margin: 0 auto;
+        } /* img päättyy */     
+
+        a{
+            color: rgb(128, 255, 0);
+            display: block;
+            margin: 0 auto;
+        }/* a päättyy*/
+
+        .small-images{
+            /*Määrittää tyylit luokka kohtaisesti*/
+            width: 100px;
+            height: 75px;
+        } /*.small-images päättyy*/
+
+
+    </style>
+</head>
+
+<!-- 3 tapaa tehdä kuvista samankokoisia -->
+<!-- 1. Määritellään kuvan koko img-elementin attribuuttina. -->
+<!-- 2. Määritellään tyyleissä kaikkien img-elementtien koot. -->
+<!-- 3. Määrittää elementille luokka tai id, ja antaa tyylit luokka tai id kohtaisesti. -->
+<body>
+    <h1>Eläimet</h1>
+    <ul> <!-- Lista-elementti  -->
+        <li> <img class="small-images" src="images/dog.jpg" alt="kuva koirasta"> <a href="https://en.wikipedia.org/wiki/Dog">Koira</a> </li> <!-- Tästä alkaa listan elementit -->
+        <li> <img class="small-images" src="images/cat.webp" alt="kuva kissasta"> <a id="black-link" href="https://en.wikipedia.org/wiki/Cat">Kissa</a> </li>
+        <li> <img class="small-images" src="images/bear.jpg" alt="Kuva karhusta"> <a href="https://en.wikipedia.org/wiki/Bear">Karhu</a> </li>
+        <li> <img class="small-images" src="images/moose.jpg" alt="Kuva hirvestä"> <a href="https://en.wikipedia.org/wiki/Moose">Hirvi</a> </li>
+    </ul>
+</body>
+</html>
