@@ -1,0 +1,45 @@
+h1 {
+    color: red;
+    transform: rotate(0.75turn);
+}
+
+p, li { /* valitaan useampi elementti */
+    color: green;
+}
+
+/* p {
+    display: inline;
+} */
+
+li {
+list-style-type: none;
+}
+
+li.special, span.special {
+    color: orange;
+    font-weight: bold;
+}
+
+li em { /* tämä muokkaa em-elementtejä, jotka ovat li-elementin sisällä */
+    color: purple;
+}
+
+h1 + p {
+    font-size: 200%;
+}
+
+a:link {
+    color: pink;
+}
+
+a:visited {
+    color: green;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+* {
+    color: yellow;
+}
