@@ -93,3 +93,8 @@ ol, ul {
     position: relative;
     display: inline-block;
 }
+
+.list-disc {
+    list-style-type: disc;
+    padding-left: 50px;
+}
