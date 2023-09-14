@@ -25,30 +25,23 @@ li {
 
 a {
     text-decoration: none;    
-    font-size: 2vw;
+    font-size: 26px;
 }
 
 .box {
     margin: 5%;
-
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
 
-.box p{
-    flex-basis: calc(45% - 5px);
-    padding: 3%;
-    box-sizing: border-box;
-}
-
-.box img {
-    max-width: calc(45% - 5px);
-    height: auto;
-}
-
-p {
+.box p {
     line-height: 300%;
-    font-size: 2vw;
+    font-size: 26px; /* Staattinen fontti koko suurella näytöllä*/
+}
+
+.box-item {
+    max-width: 650px;
+    max-height: 550px;
 }
