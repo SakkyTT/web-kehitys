@@ -1,0 +1,54 @@
+.logo{
+    width: 80px;
+}
+
+header{
+    display: flex;
+    justify-content: space-between; /* laittaa tyhjän tilan lapsien väliin*/
+    align-items: center;
+    background-color: rgb(233, 233, 139);
+    padding: 20px;
+}
+
+body {
+    margin: 0;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+}
+
+li {
+    padding-right: 10px;
+}
+
+a {
+    text-decoration: none;    
+    font-size: 2vw;
+}
+
+.box {
+    margin: 5%;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.box p{
+    flex-basis: calc(45% - 5px);
+    padding: 3%;
+    box-sizing: border-box;
+}
+
+.box img {
+    max-width: calc(45% - 5px);
+    height: auto;
+}
+
+p {
+    line-height: 300%;
+    font-size: 2vw;
+}
