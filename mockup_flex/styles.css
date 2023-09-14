@@ -4,10 +4,19 @@
 
 header{
     display: flex;
-    justify-content: space-between; /* laittaa tyhjän tilan lapsien väliin*/
+    justify-content: center;
     align-items: center;
     background-color: rgb(233, 233, 139);
     padding: 20px;
+    height: 11rem;    
+}
+
+.header-center {
+    width: 100%;
+    max-width: 1330px;
+    display: flex;
+    justify-content: space-between; /* laittaa tyhjän tilan lapsien väliin*/
+    align-items: center;
 }
 
 body {
@@ -29,9 +38,7 @@ a {
 }
 
 .box {
-    margin: 5%;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
@@ -39,9 +46,77 @@ a {
 .box p {
     line-height: 300%;
     font-size: 26px; /* Staattinen fontti koko suurella näytöllä*/
+    padding: 8px;
 }
 
 .box-item {
     max-width: 650px;
     max-height: 550px;
+    height: 550px; /* staattinen korkeus laatikoille */
+    /* width: 650px; */
+    flex: 1;
+    background-color: rgb(241, 227, 255);
+    margin: 30 15 30 15;
+    border-radius: 20px;
+    text-align: center;
+    display: flex; /* keskitetään p tämän div:n sisällä */
+    align-items: center; /* y-axis */
+    justify-content: center; /* x-axis */
 }
+
+.box-item img {
+    /* display: none; kokeillaan toimiiko selector */
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    /* width: 650px;
+    height: 550px; */
+}
+
+
+footer {
+    background-color: rgba(0, 0, 0, 0.724);
+    padding: 20px;
+    height: 24rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.image-80 {
+    width: 80px;
+    height: 80px;
+}
+
+footer p, footer a {    
+    color: white;
+}
+
+.p-left40 {
+    padding-left: 40px;
+}
+
+footer nav ul {
+    margin: 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
