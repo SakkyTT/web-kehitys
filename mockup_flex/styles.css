@@ -1,21 +1,22 @@
-.logo{
+.logo {
     width: 80px;
 }
 
-header{
+header {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgb(233, 233, 139);
     padding: 20px;
-    height: 11rem;    
+    height: 11rem;
 }
 
 .header-center {
     width: 100%;
     max-width: 1330px;
     display: flex;
-    justify-content: space-between; /* laittaa tyhjän tilan lapsien väliin*/
+    justify-content: space-between;
+    /* laittaa tyhjän tilan lapsien väliin*/
     align-items: center;
 }
 
@@ -33,7 +34,7 @@ li {
 }
 
 a {
-    text-decoration: none;    
+    text-decoration: none;
     font-size: 26px;
 }
 
@@ -45,23 +46,46 @@ a {
 
 .box p {
     line-height: 300%;
-    font-size: 26px; /* Staattinen fontti koko suurella näytöllä*/
+    font-size: 26px; /* Staattinen fontti koko suurella näytöllä*/    
     padding: 8px;
+}
+
+@media (max-width: 1350px) { /*  kohta 1  */
+    .box p {
+        font-size: 1.95vw; /* huomioi rem ja vw ero*/     
+    }
 }
 
 .box-item {
     max-width: 650px;
     max-height: 550px;
-    height: 550px; /* staattinen korkeus laatikoille */
+    height: 550px;
+    /* staattinen korkeus laatikoille */
     /* width: 650px; */
     flex: 1;
     background-color: rgb(241, 227, 255);
     margin: 30 15 30 15;
     border-radius: 20px;
     text-align: center;
-    display: flex; /* keskitetään p tämän div:n sisällä */
-    align-items: center; /* y-axis */
-    justify-content: center; /* x-axis */
+    display: flex;
+    /* keskitetään p tämän div:n sisällä */
+    align-items: center;
+    /* y-axis */
+    justify-content: center;
+    /* x-axis */
+}
+
+@media (max-width: 1350px) { /*  kohta 2  */
+    .box-item {
+        height: auto;
+        margin: 1vw 0.5vw 1vw 0.5vw;
+    }
+}
+
+@media (max-width: 1350px) { /*  kohta 2  */
+    .box {
+        align-items: stretch;
+    }
 }
 
 .box-item img {
@@ -88,7 +112,8 @@ footer {
     height: 80px;
 }
 
-footer p, footer a {    
+footer p,
+footer a {
     color: white;
 }
 
@@ -99,24 +124,3 @@ footer p, footer a {
 footer nav ul {
     margin: 0px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
