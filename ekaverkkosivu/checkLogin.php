@@ -25,7 +25,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    if($username == "teemu184"){
+    if($username == "teemu"){
         if($password == "salasana123"){
             // Tiedot oikein
             echo "Tervetuloa " . $username;

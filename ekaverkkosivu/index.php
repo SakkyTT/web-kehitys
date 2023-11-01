@@ -1,10 +1,19 @@
 <?php
+session_start();
+
 // PHP:n tarkoitus on siirtää dataa käyttäjältä palvelimelle
 // ja palvelimelta käyttäjälle.
 // Lisäksi kaikenlainen datan käsittely.
 // 
 
 sleep(1);
+
+
+// Siirretään käyttäjä pois, jos ei ole kirjautunut
+if(isset($_SESSION["username"]) == true){
+    header("Location: memberArea.php");
+}
+
 ?>
 
 <html lang="en">
