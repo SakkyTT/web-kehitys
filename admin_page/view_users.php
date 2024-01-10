@@ -1,5 +1,5 @@
 <?php
-
+// sleep(1);
 // Tässä tiedostossa listataan kaikki käyttäjät taulukossa
 // Taulukossa on napit, joilla käyttäjä voidaan poistaa tai muokata
 
@@ -19,6 +19,11 @@
 // 5. Näytetään käyttöliittymässä, mitkä käyttäjät on poistettu
 //      a. tietokannasta pitää hakea sarake, jossa tieto poistosta "deleted_at"-sarake
 //      b. lisätään jokin tyyli riveille, joiden käyttällä "deleted_at" != null
+//
+// 6. Lisätään käyttäjän palautus painike
+//      a. Lisätään valintarakenne, jossa generoidaan joko poisto ja palautus nappi
+//      b. lisätään logiikka, jolla havaitaan napin napsaus. Lisäksi logiikka, joka palauttaa käyttäjän
+//              tietokannassa.
 
 
 // Tietokanta yhteyden koodit löytyy tästä tiedostosta
@@ -30,7 +35,17 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     if(isset($_POST['delete'])){
         // delete nappia on painettu
         $userIdToDelete = $_POST["user_id"];
-        delete_user($pdo_conn, $userIdToDelete);
+        $operationResult = delete_user($pdo_conn, $userIdToDelete);
+    }
+}
+
+
+// Käyttäjän "palautus"
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    if(isset($_POST['restore'])){
+        // restore nappia on painettu
+        $userIdToRestore = $_POST["user_id"];
+        $operationResult = restore_user($pdo_conn, $userIdToRestore);
     }
 }
 
@@ -71,12 +86,29 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC); // Tallennetaan data muuttujaan
             text-align: center;
         }
 
+        /* .custom_button{
+            font-weight: bold;
+            padding: 15px;
+            border-radius: 15px;
+            cursor: pointer;
+        } */
+
         .delete{
             background-color: #f5514e;
             font-weight: bold;
             padding: 15px;
             border-radius: 15px;
             cursor: pointer;
+            width: 80px;
+        }
+
+        .restore{
+            background-color: #8CED28;
+            font-weight: bold;
+            padding: 15px;
+            border-radius: 15px;
+            cursor: pointer;            
+            width: 80px;
         }
 
         form{
@@ -95,10 +127,18 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC); // Tallennetaan data muuttujaan
         .deleted{
             background-color: #FFD2D2;
         }
+
+        .hidden{
+            opacity: 0;
+        }
     </style>
 </head>
 <body>
     <main>
+
+    <h3 <?php if(isset($operationResult) === false) { echo "class='hidden'"; } ?> > 
+    <?php if(isset($operationResult)) { echo $operationResult; } else { echo "hidden";} ?>
+  </h3>
         
         <h2>User List</h2>
         
@@ -122,6 +162,7 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC); // Tallennetaan data muuttujaan
                 <td><?= htmlspecialchars($user["email"]) ?></td>
                 <td> <!-- Actions sarake -->
                 
+                <?php if($user['deleted_at'] === null): ?>
                 <!-- Poistetaan käyttäjä tällä sivulla -->
                     <form action="view_users.php" method="post">
                         <input type="hidden" name="user_id" value="<?= $user["UserID"] ?>">
@@ -130,10 +171,18 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC); // Tallennetaan data muuttujaan
                         <!-- isset($_POST["delete"]) ja $_POST["user_id"] -->
                     </form>
 
+                <?php else: ?>
+                    <form action="view_users.php" method="post">
+                        <input type="hidden" name="user_id" value="<?= $user["UserID"] ?>">
+                        <button class="restore" name="restore" type="submit">Restore</button>
+                    </form>
+
+                <?php endif; ?>
+
                     <div class="divider"></div>
 
-                    <!-- $_GET["userId"] -->
-                    <a href="edit_user.php?userId=<?= $user["UserID"] ?>">Edit</a>
+                    <!-- $_GET["UserID"] -->
+                    <a href="edit_user.php?UserID=<?= $user["UserID"] ?>">Edit</a>
                     
                 </td><!-- Actions sarake päättyy -->
                 
