@@ -46,6 +46,7 @@ function restore_user($pdo, $id){
 } // restore_user
 
 function getUserDetails($pdo, $userId){
+    // Tarkistetaan, onko oikeus katsoa näitä tietoja
     try{
         $stmt = $pdo->prepare("SELECT * FROM users WHERE UserID = :user_id");
 
@@ -60,3 +61,15 @@ function getUserDetails($pdo, $userId){
     }
 
 } // getUserDetails
+
+//                                   Taulukossa uusi data
+function updateUserDetails($pdo, $userId, $newData){
+    // Pitäisi vielä tarkistaa ennen muokkausta, että käyttäjällä on oikeus muokata
+    // tätä asiaa
+    $stmt = $pdo->prepare("UPDATE users SET Username = :username, Email = :email WHERE UserID = :user_id");
+    $stmt->bindParam(':username', $newData['Username'], PDO::PARAM_STR);
+    $stmt->bindParam(':email', $newData['Email'], PDO::PARAM_STR);
+    $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
+
+    $stmt->execute();
+} // updateUserDetails

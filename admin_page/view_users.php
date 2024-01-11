@@ -140,7 +140,7 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC); // Tallennetaan data muuttujaan
     <?php if(isset($operationResult)) { echo $operationResult; } else { echo "hidden";} ?>
   </h3>
         
-        <h2>User List</h2>
+        <h2>User List (vain admin käyttäjät)</h2>
         
         <!-- Tähän taulukkoon generoidaan rivejä $users muuttujan datan perusteella -->
         <table>
