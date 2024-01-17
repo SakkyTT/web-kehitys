@@ -1,0 +1,9 @@
+# Tässä tiedostossa voidaan määritellä mitä kansioita ja tiedostoja
+# Git ei tallenna
+secrets.php
+
+
+# yleensä on vain yksi .gitingnore tiedosto repon juuressa
+# Joten pitää laittaa koko polku tiedostoon
+
+file_upload/secrets.php
