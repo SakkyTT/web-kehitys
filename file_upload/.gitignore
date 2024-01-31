@@ -1,7 +1,8 @@
 # Tässä tiedostossa voidaan määritellä mitä kansioita ja tiedostoja
-# Git ei tallenna
+# Git ei tallenna tiedostoa
 secrets.php
 
+# Tässä repossa secrets-php on nimetty uudelleen secrets_new_name.php, jotta se saadaan esimerkkinä opiskelijoille
 
 # yleensä on vain yksi .gitingnore tiedosto repon juuressa
 # Joten pitää laittaa koko polku tiedostoon
