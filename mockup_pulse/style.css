@@ -8,9 +8,8 @@ html {
     line-height: 1.5;
     background-color: #fcfcfc;
     color: #464951;
-    font-family: Work Sans, sans-serif;
     font-family: sans-serif;
-
+    height: 3000px;
 }
 
 body {
@@ -25,7 +24,7 @@ body {
     overflow-x: hidden;
 }
 
-.md\:bg-green-100{
+.bg-green-100{
     background-color: #eafaf1;
 }
 
@@ -77,10 +76,6 @@ ol, ul {
     list-style: none;
 }
 
-.md\:flex {
-    display: flex;
-}
-
 .no-underline {
     text-decoration: none;
 }
@@ -89,12 +84,121 @@ ol, ul {
     transform: translate3d(5px, -5px, 0);
 }
 
+.active {    
+    color: #062c27;
+}
+
 .button {
     position: relative;
     display: inline-block;
+    border-color: #00ad6a;
+    background-color: transparent;
+    color: #00ad6a;
+    border-width: 2px;
+    padding: .25rem 1rem .25rem 1rem;
 }
 
 .list-disc {
     list-style-type: disc;
-    padding-left: 50px;
+    margin: 0 0 1rem 1rem;
+}
+
+h1{
+    margin: 0 0 1rem 0;
+    letter-spacing: -2px;
+    font-size: 3.75rem;
+    line-height: 1;
+    font-weight: 700;
+    color: #080c16;
+}
+
+p{    
+    font-size: 1.125rem;
+    margin: 0;
+}
+
+#content{
+    padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
+    justify-content: center;
+    display: flex;
+    
+}
+
+.container-title{    
+    text-align: center;
+    max-width: 600px;
+    margin: auto;
+}
+
+.container-blocks{    
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+h2{    
+    color: #00ad6a;
+    margin: 0 0 1rem 0;
+    line-height: 1.15;
+    font-weight: 700;  
+    font-size: 1.25rem;
+}
+
+.text-gray{    
+    color: #464951;
+}
+
+.sub-container{
+    display: flex;
+    align-items: center;
+}
+
+.block-container{
+    display: block;
+    align-items: center;
+}
+
+.block-one{
+    padding: 3.5rem;
+    width: 33.33%;
+}
+
+.block-two{
+    width: 33.33%;
+    border-color: #00ad6a;
+    border-radius: 8px 8px 0 0;
+    border-width: 1px;
+    display: flex;
+    flex-direction: column;
+}
+
+.block-two a{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.block-three{
+    width: 33.33%;
+}
+
+.text-base{
+    font-size: 1rem;
+}
+
+.start{
+    text-align: start;
+}
+
+.block-header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+}
+
+.block-content{
+    padding-top: 3rem;
 }
